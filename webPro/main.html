@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+	<title>API</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<meta charset="UTF-8" />
+</head>
+
+<body>
+	<h1>Google Map APIで自転車用ルートの経路検索</h1>
+  
+  <div class="waku">
+	<form name="search">
+	  <label>現在地 </span><input type="text"></label>
+	  <br>
+	  <label>目的地 </span><input type="text"></label>
+	  <br>
+	  <br>
+	  <label>
+	    <select name="ym" onChange="changeMonth(event)"></select>
+	    <select name="day"></select>
+	    <select name="hour"></select>
+	    <select name="minute"></select>
+	  </label>
+	  <label>
+	    <label><input type="radio" name="se" value="0"checked="true">出発</label>
+	    <label><input type="radio" name="se" value="1">到着</label>
+	  </label>
+	  <br>
+	  <br>
+	  <label>
+	    <label><input type="radio" name="type" value="1" checked="true">シティサイクル(ママチャリ)</label>
+	    <label><input type="radio" name="type" value="2">小径車</label>
+	    <label><input type="radio" name="type" value="3">ロードバイク</label>
+	  </label>
+	  <br>
+	  <br>
+	  <input type="button" value="決定" onclick="setMap()">
+	</form>
+	</div>
+	<br><br>
+	
+	<div class="waku"><div id="results" class="inner"></div></div>
+	<div class="waku"><div id="map"  class="inner" style="width:620px; height:400px"></div></div>
+	<div class="waku"><div id="route"  class="inner" style="width:620px; height400px"></div></div>
+
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMw758bld_JT3l-zrHFb4a9h-HbFJckEY&callback=initMap&ibraries=drawing,places,geometry">
+  </script>
+  
+  <script src="main.js"></script>
+
+</body>
+</html>
